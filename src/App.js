@@ -1,25 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react'
+import Header from './components/Header'
+import {BrowserRouter as Router,Routes,Route} from 'react-router-dom'
+// import Body from './components/Body'
+import { PropagateLoader } from 'react-spinners'
+import InsidePage from './components/InsidePage'
+
+const Body = React.lazy(()=> import('./components/Body'))
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Router>
+      <Routes>
+        {/* Page for movie inner page */}
+        <Route path='/page/:id' element={<>
+        <Header/>
+        <InsidePage/>
+        </>}/>
+
+{/* Path for home page */}
+        <Route path='/' element={<>
+        <Header/>
+        <Suspense fallback={<><h1 style={{textAlign:"center"}}>Loading Data . . . </h1>
+        <div style={{flex:"1",justifyItems:"center",alignItems:"center",display:"flex"}}>
+        <PropagateLoader color="#36d7b7" />
+        </div>
+        </>}>
+        <Body/>
+        </Suspense>
+        </>}/>
+
+      </Routes>
+    </Router>
+  )
 }
 
-export default App;
+export default App

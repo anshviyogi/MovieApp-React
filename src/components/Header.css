@@ -1,0 +1,101 @@
+.header{
+    background-color: rgb(51,53,68);
+    display:flex;
+    align-items: center;
+    position: sticky;
+    top:0;
+    z-index: 100;
+}
+
+.header__logo{
+    margin-top: 18px;
+    object-fit: contain;
+    margin-right: 10px;
+    margin-left: 20px;
+    width: 100px;
+}
+
+.header__search{
+    display: flex;
+    flex: 1;
+    width: 400px;
+}
+
+.header__searchInput{
+    padding: 20px;
+    padding-left: 30px;
+    height: 12px;
+    border: none;
+    width: 70%;
+    border-radius: 5px;
+    color: rgba(31, 29, 29, 0.753);
+    font-size: 14px;
+    outline: 0px;
+    background: white;
+    box-shadow: none;
+}
+
+.header__filterYear{
+    outline: 0px;
+    background: white;
+    box-shadow: none;
+}
+
+.header__searchIcon{
+    top:8px;
+    left: 25px;
+    position: relative;
+    font-size: 15px;
+    color: rgba(128, 128, 128, 0.829);
+}
+
+.header__nav{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header__link{
+    color: white;
+    text-decoration: none;
+}
+
+.header__option{
+    color:white;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+.header__optionLineOne{
+    font-size: 10px;
+}
+
+.header__optionLineTwo{
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.header__optionBasket{
+    display: flex;
+    align-items: center;
+}
+
+.basketCount{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.india__locationText{
+    color: rgb(209,202,194);
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.header__filterYear{
+    border-radius: 20px;
+    margin-left: 50px;
+    text-align: center;    
+}
